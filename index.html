@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Boolflix</title>
+        <script src="https://kit.fontawesome.com/1e3e5f2200.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
@@ -26,15 +27,22 @@
             <main id="risultati"></main>
         </div>
 
-
+        <!-- template card -->
         <script id="card-template" type="text/x-handlebars-template">
             <ul class="card">
-                <li>{{ titolo }}</li>
-                <li>{{ titolo_originale }}</li>
-                <li>{{ lingua }}</li>
-                <li>{{ voto }}</li>
+                <li>Titolo: {{ titolo }}</li>
+                <li>Titolo originale: {{ titolo_originale }}</li>
+                <li>Lingua: {{{ lingua }}}</li>
+                <li>Voto: {{{ voto }}}</li>
+                <li>Tipo: {{{ tipo }}}</li>
             </ul>
         </script>
+
+        <!-- template bandiera -->
+        <script id="bandiera-template" type="text/x-handlebars-template">
+            <img class="bandierina" src="flags/{{ codice_lingua }}.png" alt="{{ codice_lingua }}">
+        </script>
+
         <script src="main.js" charset="utf-8"></script>
     </body>
 </html>
