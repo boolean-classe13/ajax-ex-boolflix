@@ -73,6 +73,10 @@ header {
     list-style-type: none;
 }
 
+.copertina {
+    width: 100%;
+}
+
 .bandierina {
     height: 20px;
 }

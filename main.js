@@ -3,6 +3,8 @@ $(document).ready(function() {
     // variabili per le chiamate ajax
     var api_key = 'c4a5d0f9204fe8ed8998978f4fb5f4c2';
     var api_url_base = 'https://api.themoviedb.org/3/';
+    var api_img_url_base = 'https://image.tmdb.org/t/p/';
+    var dimensione_img = 'w185';
 
     // preparo le variabili per handlebars (template card)
     var template_html = $('#card-template').html();
@@ -124,13 +126,21 @@ $(document).ready(function() {
             var titolo_originale_card = dati.original_name;
         }
 
+        // verifico se c'è un'immagine di copertina
+        if(dati.poster_path !== null) {
+            var img = api_img_url_base + dimensione_img + dati.poster_path;
+        } else {
+            var img = 'img/poster-not-available.jpg';
+        }
+
         // preparo i dati per il template
         var placeholder = {
             'titolo': titolo_card,
             'titolo_originale': titolo_originale_card,
             'lingua': bandiera_lingua(dati.original_language),
             'voto': stelline(normalizza_voto(dati.vote_average)),
-            'tipo': tipologia
+            'tipo': tipologia,
+            'path_copertina': img
         };
         var html_card = template(placeholder);
         // appendo la card con i dati del risultato corrente
