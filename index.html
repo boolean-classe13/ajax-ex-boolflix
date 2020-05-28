@@ -29,16 +29,25 @@
 
         <!-- template card -->
         <script id="card-template" type="text/x-handlebars-template">
-            <ul class="card">
-                <li>
-                    <img class="copertina" src="{{ path_copertina }}" alt="{{ titolo }}">
-                </li>
-                <li>Titolo: {{ titolo }}</li>
-                <li>Titolo originale: {{ titolo_originale }}</li>
-                <li>Lingua: {{{ lingua }}}</li>
-                <li>Voto: {{{ voto }}}</li>
-                <li>Tipo: {{{ tipo }}}</li>
-            </ul>
+
+            <div class="flip-card-wrapper">
+                <div class="flip-card-inner">
+                    <div class="card-front">
+                        <img class="copertina" src="{{ path_copertina }}" alt="{{ titolo }}">
+                    </div>
+                    <div class="card-back">
+                        <ul class="card">
+                            <li>Titolo: {{ titolo }}</li>
+                            <li>Titolo originale: {{ titolo_originale }}</li>
+                            <li>Lingua: {{{ lingua }}}</li>
+                            <li>Voto: {{{ voto }}}</li>
+                            <li>Tipo: {{{ tipo }}}</li>
+                            <li>{{ trama }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </script>
 
         <!-- template bandiera -->

@@ -140,7 +140,8 @@ $(document).ready(function() {
             'lingua': bandiera_lingua(dati.original_language),
             'voto': stelline(normalizza_voto(dati.vote_average)),
             'tipo': tipologia,
-            'path_copertina': img
+            'path_copertina': img,
+            'trama': dati.overview
         };
         var html_card = template(placeholder);
         // appendo la card con i dati del risultato corrente
